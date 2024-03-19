@@ -69,7 +69,9 @@ public class US1_LoginStepDefs
     {
         Assert.assertTrue(
                 "Check box not displayed or \""+loginPage.rememberMeMessage+"\" doesn't match \""+checkBoxText+"\"",
-                loginPage.rememberCheckBox.isDisplayed() && loginPage.rememberMeMessage.getText().equals(checkBoxText));
+
+                loginPage.rememberCheckBox.isDisplayed() && loginPage.rememberMeMessage.getText().equals(checkBoxText)
+        );
 
     }
 

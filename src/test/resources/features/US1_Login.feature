@@ -34,7 +34,7 @@ Feature: User login functionality
       | marketing71@cydeo.com  | UserUser |
       | marketing101@cydeo.com | UserUser |
 
-  @AC2 @validUserName_InvalidPassword @B32G7-160
+  @AC2  @B32G7-160
   Scenario Outline: User can see "Incorrect login or password" message when enters valid user name and invalid password
 
     When User types "<userName>" in user name input box
@@ -49,7 +49,7 @@ Feature: User login functionality
       | helpdesk61@cydeo.com   | userUser        |
       | marketing101@cydeo.com | password        |
 
-  @AC2 @InvalidUserName_ValidPassword @B32G7-161
+  @AC2  @B32G7-161
   Scenario Outline: User can see "Incorrect login or password" message when enters invalid user name and valid password
 
     When User types "<invalidUserName>" in user name input box
@@ -64,7 +64,7 @@ Feature: User login functionality
       | helpdesk102@cydeo.com | UserUser |
       | something1@cydeo.com  | UserUser |
 
-  @AC3 @emptyUserOrPassword @B32G7-162
+  @AC3  @B32G7-162
   Scenario Outline: User can see "Please fill out this field" message is the password or username is empty
 
     When User types "<UserName>" in user name input box
