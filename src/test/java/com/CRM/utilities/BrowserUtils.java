@@ -54,8 +54,10 @@ public class BrowserUtils {
         Assert.assertEquals(Driver.getDriver().getTitle(), expectedTitle);
     }
     public static void verifyTitleContains( String expectedInTitle){
-        Assert.assertTrue("Actual title \""+Driver.getDriver().getTitle()+"\" doesn't contain "+expectedInTitle,
-                Driver.getDriver().getTitle().contains(expectedInTitle));
+        Assert.assertTrue(
+                "Actual title \""+Driver.getDriver().getTitle()+"\" doesn't contain "+expectedInTitle,
+                Driver.getDriver().getTitle().contains(expectedInTitle)
+        );
     }
 
     /*

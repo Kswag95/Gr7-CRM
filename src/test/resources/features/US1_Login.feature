@@ -6,7 +6,7 @@ Feature: User login functionality
     Given User type in application url into browser
     Then User in on the "Authorization"  page
 
-  @AC1   @validCredentials @B32G7-158
+  @AC1   @B32G7-158
   Scenario Outline: User can login with valid credentials and land on the home page after successful login
     When User types "<userName>" in user name input box
     And User types "<password>" in password input box
