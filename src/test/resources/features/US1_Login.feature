@@ -64,7 +64,7 @@ Feature: User login functionality
       | helpdesk102@cydeo.com | UserUser |
       | something1@cydeo.com  | UserUser |
 
-  @AC3 @emptyUserOrPswd @B32G7-162
+  @AC3 @emptyUserOrPassword @B32G7-162
   Scenario Outline: User can see "Please fill out this field" message is the password or username is empty
 
     When User types "<UserName>" in user name input box

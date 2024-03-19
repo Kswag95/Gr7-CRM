@@ -29,6 +29,7 @@ public class LoginPage extends BasePage {
         this.userNameInputBox.sendKeys(userName);
         this.passwordInputBox.sendKeys(password);
         this.logInBtn.click();
+
     }
 
 

@@ -77,6 +77,7 @@ public class US1_LoginStepDefs
     public void userClicksRememberMeOnThisComputerCheckbox()
     {
         loginPage.rememberCheckBox.click();
+
         Assert.assertTrue(loginPage.rememberCheckBox.isSelected());
     }
 }
