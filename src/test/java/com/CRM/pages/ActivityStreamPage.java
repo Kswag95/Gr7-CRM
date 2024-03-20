@@ -22,10 +22,6 @@ public class ActivityStreamPage {
     @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public WebElement sendButton;
 
-
-    @FindBy(id = "blog-submit-button-cancel")
-    public WebElement cancelButton;
-
     @FindBy(xpath = "//a[@id='bx-destination-tag']")
     public WebElement addMoreButton;
 
@@ -33,11 +29,28 @@ public class ActivityStreamPage {
     @FindBy(xpath = "//input[@id='feed-add-post-destination-input']")
     public WebElement addMoreButtonType;
 
-    @FindBy(className = "popup-window-close-icon")
-    public WebElement closeAddMoreButton;
-
-
     @FindBy(xpath = "//body[@contenteditable='true']")
     public WebElement messageBoxIframe;
 
+    @FindBy(id = "blog-submit-button-cancel")
+    public WebElement cancelButton;
+
+
+    @FindBy(className = "feed-add-post-destination-text")
+    public WebElement allEmployees;
+
+
+    @FindBy(xpath = "//div[@id='BXSocNetLogDestination']")
+    public WebElement addMoreOptions;
+
+
+    @FindBy(xpath = "//span[@class='feed-add-info-text']")
+    public WebElement messageIsNotSpecifiedError;
+
+    @FindBy(xpath = "//span[@class='feed-add-info-text']")
+    public WebElement recipientIsNotSpecifiedError;
+
+
+    @FindBy(xpath = "//span[@class='feed-add-post-del-but']")
+    public WebElement cancelButtonOfAllEmployee;
 }
