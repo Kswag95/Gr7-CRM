@@ -6,6 +6,7 @@ import com.CRM.pages.BasePage;
 import com.CRM.pages.LoginPage;
 import com.CRM.utilities.ConfigurationReader;
 import com.CRM.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -122,13 +123,55 @@ aprFileLoad.uploadFileAndImages.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\p
     public void user_clicks_on_upload_files() {
      activityStreamPage.uploadFile.click();
     }
-    @When("User clicks on Upload files and images")
-    public void user_clicks_on_upload_files_and_images() {
-       activityStreamPage.uploadFileAndImages.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\pdf.lnk");
+
+    @And("User clicks on Upload pdf")
+    public void userClicksOnUploadPdf() {
+        activityStreamPage.uploadFileAndImages.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\pdf.lnk");
     }
-    @Then("User able to upload .pdf")
-    public void user_able_to_upload_pdf() {
+    @Then("User able to upload pdf")
+    public void userAbleToUploadPdf() {
+        Assert.assertTrue(activityStreamPage.MyDriveUploadedFiles.isDisplayed());
+    }
+
+
+    @And("User clicks on Upload txt")
+    public void userClicksOnUploadTxt() {
+       activityStreamPage.uploadFileAndImages.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\txt.lnk");
+    }
+
+    @Then("User able to upload txt")
+    public void userAbleToUploadTxt() {
        Assert.assertTrue(activityStreamPage.MyDriveUploadedFiles.isDisplayed());
+    }
+
+    @And("User clicks on Upload jpeg")
+    public void userClicksOnUploadJpeg() {
+       activityStreamPage.uploadFileAndImages.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\jpeg.lnk");
+    }
+
+    @Then("User able to upload jpeg")
+    public void userAbleToUploadJpeg() {
+        Assert.assertTrue(activityStreamPage.MyDriveUploadedFiles.isDisplayed());
+    }
+
+    @And("User clicks on Upload png")
+    public void userClicksOnUploadPng() {
+        activityStreamPage.uploadFileAndImages.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\png.png");
+    }
+
+    @Then("User able to upload png")
+    public void userAbleToUploadPng() {
+            Assert.assertTrue(activityStreamPage.MyDriveUploadedFiles.isDisplayed());
+        }
+
+    @And("User clicks on Upload docx")
+    public void userClicksOnUploadDocx() {
+        activityStreamPage.uploadFileAndImages.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\docx.docx");
+    }
+
+    @Then("User able to upload docx")
+    public void userAbleToUploadDocx() {
+        Assert.assertTrue(activityStreamPage.MyDriveUploadedFiles.isDisplayed());
     }
 }
 

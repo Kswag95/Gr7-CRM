@@ -14,22 +14,24 @@ Background: User is on the Activity Stream page
 	@Leila
 	@B32G7-153
 	Scenario: Verify that the user can upload pdf
-		And User clicks on Upload files and images
-		Then User able to upload .pdf
+		And User clicks on Upload pdf
+		Then User able to upload pdf
 
 	Scenario: Verify that the user can upload txt
-		And User clicks on Upload files and images
-		Then User able to upload .txt
+		And User clicks on Upload txt
+		Then User able to upload txt
 
 	Scenario: Verify that the user can upload jpeg
-		And User clicks on Upload files and images
-		Then User able to upload .jpeg
+		And User clicks on Upload jpeg
+		Then User able to upload jpeg
 
 	Scenario: Verify that the user can upload png
-		Then User able to upload .png
+		And User clicks on Upload png
+		Then User able to upload png
 
 	Scenario: Verify that the user can upload docx
-		Then User able to upload .docx
+		And User clicks on Upload docx
+		Then User able to upload docx
 
 	
 	@B32G7-154
