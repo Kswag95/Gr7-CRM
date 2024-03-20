@@ -19,7 +19,7 @@ Feature: Upload files and picture as messages function
     And User clicks on Upload files and images
     And User select files and pictures
     And User clicks on Insert in text
-    Then User can insert the files and images into the text.
+    Then User can insert the files and images into the text
 
 
   Scenario: Verify that the user can remove files and images at any time before sending.
