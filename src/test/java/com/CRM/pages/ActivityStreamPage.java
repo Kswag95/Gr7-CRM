@@ -12,6 +12,12 @@ public class ActivityStreamPage {
     }
 
 
+    @FindBy(id = "user-name")
+    public WebElement profilePage;// added by LG
+
+    @FindBy(xpath = "//span[.='My Profile']")
+    public WebElement myProfile;//LG
+
     @FindBy(xpath = "//li[@data-id='menu_live_feed']")
     public WebElement activityStream;
 
