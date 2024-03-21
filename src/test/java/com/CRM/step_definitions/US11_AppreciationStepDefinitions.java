@@ -8,6 +8,7 @@ import com.CRM.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -27,26 +28,30 @@ public class US11_AppreciationStepDefinitions{
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
-    @Then("user enters valid credentials")
+    @When("user enters valid credentials")
     public void userEntersValidCredentials() {
 
         loginPage.login(ConfigurationReader.getProperty("hr_username"), ConfigurationReader.getProperty("hr_password"));
     }
-    @Given("user clicks on the more icon")
+    @Then("user should click Activity Stream")
+    public void user_should_click_activity_stream() {
+        activityStreamPage.activityStream.click();
+
+
+    }
+    @When("user clicks on the more icon")
     public void userClicksOnTheMoreIcon() {
 
         appreciationPage.moreIcon.click();
 
     }
-    @And("user clicks on appreciation option")
+    @When("user clicks on appreciation option")
     public void userClicksOnAppreciationOption() {
         appreciationPage.appreciationOption.click();
 
-
     }
 
-
-    @Then("user clicks on the send button")
+    @When("user clicks on the send button")
     public void userClicksOnTheSendButton() {
         appreciationPage.sendBtn.click();
 
@@ -57,23 +62,37 @@ public class US11_AppreciationStepDefinitions{
 
     }
 
-    @Then("user types any appreciation message")
+    @When("user types any appreciation message")
     public void userTypesAnyAppreciationMessage() {
 
-        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//div[@class='feed-add-post-text'][.//*[@id='bxed_idPostFormLHE_blogPostForm']]")));
-        WebElement paragraphText = Driver.getDriver().findElement();
-        appreciationPage.appreciationBoxIframe.sendKeys("Thank you");
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+        //activityStreamPage.messageBoxIframe.clear();
+        activityStreamPage.messageBoxIframe.sendKeys("Hi");
+        Driver.getDriver().switchTo().defaultContent();
 
     }
 
-    @Then("user closes All employees button")
+    @When("user closes All employees button")
     public void userClosesAllEmployeesButton() {
-        appreciationPage.allEmployeesCloseBtn.clear();
+        appreciationPage.allEmployeesCloseBtn.click();
     }
 
 
-    @And("user reads {string}")
+    @Then("user reads {string}")
     public void userReads(String specifyPersonMsg) {
         Assert.assertEquals("Please specify at least one person.", appreciationPage.specifyOnePersonMsg.getText());
     }
+
+    @Then("user sees the appreciation page with the mandatory field To: All employees by default")
+    public void userSeesTheAppreciationPageWithTheMandatoryFieldToAllEmployeesByDefault() {
+
+        Assert.assertTrue(appreciationPage.allEmployeesCloseBtn.isDisplayed());
+    }
+    @Then("user clicks on the cancel button at any time")
+    public void userClicksOnTheCancelButtonAtAnyTime() {
+
+        activityStreamPage.cancelButton.click();
+    }
+
+
 }

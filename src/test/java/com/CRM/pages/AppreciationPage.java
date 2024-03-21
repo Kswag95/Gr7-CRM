@@ -26,10 +26,10 @@ public class AppreciationPage{
     public WebElement titleNotSpecifiedMsg;
 
 
-    @FindBy(xpath = "//div[@class='feed-add-post-text'][.//*[@id='bxed_idPostFormLHE_blogPostForm']]")
+    @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement appreciationBoxIframe;
 
-    @FindBy(xpath = "//span[@class='feed-add-post-del-but']")
+    @FindBy(className = "feed-add-post-del-but")
     public WebElement allEmployeesCloseBtn;
 
 
