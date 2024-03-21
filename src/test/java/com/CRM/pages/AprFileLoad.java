@@ -19,10 +19,10 @@ public class AprFileLoad {
      //public WebElement uploadFile;
     //@FindBy(xpath = "//input[@name='bxu_files[]']")
     //public WebElement uploadFileAndImages;
-    @FindBy(id="check-in-text-n1283")
-    public WebElement insertInText;
-    @FindBy(xpath = "//td[@class='files-del-btn']")
-    public WebElement ex;
+   // @FindBy(id="check-in-text-n1283")
+    //public WebElement insertInText;
+   // @FindBy(xpath = "//td[@class='files-del-btn']")
+   // public WebElement ex;
     @FindBy(xpath = "//body[@contenteditable='true']")
     public WebElement messageBoxIframe;
 

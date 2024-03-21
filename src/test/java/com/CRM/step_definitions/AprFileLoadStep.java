@@ -11,6 +11,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class AprFileLoadStep {
   //  AprFileLoad aprFileLoad=new AprFileLoad();
@@ -173,6 +174,83 @@ aprFileLoad.uploadFileAndImages.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\p
     public void userAbleToUploadDocx() {
         Assert.assertTrue(activityStreamPage.MyDriveUploadedFiles.isDisplayed());
     }
+
+    @And("User clicks on Insert in text")
+    public void userClicksOnInsertInText() {
+       activityStreamPage.insertInText.click();
+    }
+
+    @Then("User can insert the pdf into the text")
+    public void userCanInsertThePdfIntoTheText() {
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+        activityStreamPage.messageBoxIframe.clear();
+        activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\pdf.lnk");
+        Driver.getDriver().switchTo().defaultContent();
+    }
+
+    @Then("User can insert the txt into the text")
+    public void userCanInsertTheTxtIntoTheText() {
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+        activityStreamPage.messageBoxIframe.clear();
+        activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\txt.lnk");
+        Driver.getDriver().switchTo().defaultContent();
+    }
+
+    @Then("User can insert the jpeg into the text")
+    public void userCanInsertTheJpegIntoTheText() {
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+        activityStreamPage.messageBoxIframe.clear();
+        activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\jpeg.lnk");
+        Driver.getDriver().switchTo().defaultContent();
+    }
+
+    @Then("User can insert the png into the text")
+    public void userCanInsertThePngIntoTheText() {
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+        activityStreamPage.messageBoxIframe.clear();
+        activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\png.png");
+        Driver.getDriver().switchTo().defaultContent();
+    }
+
+    @Then("User can insert the docx into the text")
+    public void userCanInsertTheDocxIntoTheText() {
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+        activityStreamPage.messageBoxIframe.clear();
+        activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\docx.docx");
+        Driver.getDriver().switchTo().defaultContent();
+    }
+
+
+    @And("User clicks on X button")
+    public void userClicksOnXButton() {
+        activityStreamPage.ex.click();
+    }
+
+    /*@Then("User can remove pdf at any time before sending")
+    public void userCanRemovePdfAtAnyTimeBeforeSending() {
+
+    }
+
+    @Then("User can remove txt at any time before sending")
+    public void userCanRemoveTxtAtAnyTimeBeforeSending() {
+
+    }
+
+    @Then("User can remove jpeg at any time before sending")
+    public void userCanRemoveJpegAtAnyTimeBeforeSending() {
+
+    }
+
+    @Then("User can remove png at any time before sending")
+    public void userCanRemovePngAtAnyTimeBeforeSending() {
+
+    }
+
+    @Then("User can remove docx at any time before sending")
+    public void userCanRemoveDocxAtAnyTimeBeforeSending() {
+    }
+
+     */
 }
 
 
