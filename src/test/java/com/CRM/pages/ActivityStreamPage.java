@@ -32,10 +32,21 @@ public class ActivityStreamPage {
     public WebElement insertInText;
 
     @FindBy (xpath = "//img[contains(@id,'bxid')]")
-    public List<WebElement> uploadedPngJpeg;
-
+    public WebElement uploadedPng;
+    @FindBy (xpath = "//img[contains(@id,'bxid')]")
+    public WebElement uploadedJpeg;
     @FindBy (xpath = "//span[contains(@id,'bxid')]")
-    public List<WebElement> uploadedTxtPdfDocx;
+    public WebElement uploadedPdf;
+    @FindBy (xpath = "//span[contains(@id,'bxid')]")
+    public WebElement uploadedTxt;
+    @FindBy (xpath = "//span[contains(@id,'bxid')]")
+    public WebElement uploadedDocx;
+
+   // @FindBy (xpath = "//img[contains(@id,'bxid')]")
+    //public List<WebElement> uploadedPngJpeg;
+
+    //@FindBy (xpath = "//span[contains(@id,'bxid')]")
+    //public List<WebElement> uploadedTxtPdfDocx;
 
     @FindBy(xpath = "//td[@class='files-del-btn']")
     public WebElement X;
@@ -84,4 +95,6 @@ public class ActivityStreamPage {
 
     @FindBy(xpath = "//span[@class='feed-add-post-del-but']")
     public WebElement cancelButtonOfAllEmployee;
+    @FindBy (xpath="//div[@class='files-storage-block']")
+    public WebElement myDriveUpload;
 }
