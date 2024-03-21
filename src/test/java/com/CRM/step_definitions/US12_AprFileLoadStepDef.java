@@ -223,7 +223,7 @@ aprFileLoad.uploadFileAndImages.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\p
 
     @And("User clicks on X button")
     public void userClicksOnXButton() {
-        activityStreamPage.ex.click();
+        activityStreamPage.X.click();
     }
 
     /*@Then("User can remove pdf at any time before sending")
