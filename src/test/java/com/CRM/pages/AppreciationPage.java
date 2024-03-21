@@ -33,7 +33,7 @@ public class AppreciationPage{
     public WebElement allEmployeesCloseBtn;
 
 
-    @FindBy(css = "span[class='feed-add-info-text']")
+    @FindBy(partialLinkText = "Please specify at least one person.")
     public WebElement specifyOnePersonMsg;
 
 
