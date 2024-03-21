@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class ActivityStreamPage {
 
     public ActivityStreamPage(){
@@ -28,6 +30,12 @@ public class ActivityStreamPage {
 
     @FindBy(xpath="//span[contains(@id,'check-in-text')]")
     public WebElement insertInText;
+
+    @FindBy (xpath = "//img[contains(@id,'bxid')]")
+    public List<WebElement> uploadedPngJpeg;
+
+    @FindBy (xpath = "//span[contains(@id,'bxid')]")
+    public List<WebElement> uploadedTxtPdfDocx;
 
     @FindBy(xpath = "//td[@class='files-del-btn']")
     public WebElement X;
