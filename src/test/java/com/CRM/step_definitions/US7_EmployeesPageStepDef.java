@@ -30,4 +30,10 @@ public class US7_EmployeesPageStepDef {
         Assert.assertEquals(expectedModules, actualModules);
     }
 
+    @Then("user should see Company Structure as a default")
+    public void user_should_see_company_structure_as_a_default() {
+      Assert.assertTrue(employeesPage.companyStructure.isDisplayed());
+    }
+
+
 }
