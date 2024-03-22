@@ -30,7 +30,7 @@ public class US12_AprFileLoadStepDef {
     }
     @Then("uploaded files is displayed")
     public void uploadedFilesIsDisplayed() {
-        Assert.assertTrue(activityStreamPage.myDriveUpload.isDisplayed());
+       Assert.assertTrue(activityStreamPage.myDriveUploaded.isDisplayed());
     }
     @And("User clicks on Upload file to Upload txt")
     public void userClicksOnUploadFileToUploadTxt() {
@@ -62,7 +62,7 @@ public class US12_AprFileLoadStepDef {
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         activityStreamPage.messageBoxIframe.clear();
         activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\pdf.lnk");
-        Assert.assertTrue(activityStreamPage.uploadedPdf.isDisplayed());
+       Assert.assertTrue(activityStreamPage.uploadedFiles.isDisplayed());
         Driver.getDriver().switchTo().defaultContent();
     }
 
@@ -71,7 +71,7 @@ public class US12_AprFileLoadStepDef {
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         activityStreamPage.messageBoxIframe.clear();
         activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\txt.lnk");
-        Assert.assertTrue(activityStreamPage.uploadedTxt.isDisplayed());
+        Assert.assertTrue(activityStreamPage.uploadedFiles.isDisplayed());
         Driver.getDriver().switchTo().defaultContent();
     }
 
@@ -80,7 +80,7 @@ public class US12_AprFileLoadStepDef {
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         activityStreamPage.messageBoxIframe.clear();
         activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\jpeg.lnk");
-        Assert.assertTrue(activityStreamPage.uploadedJpeg.isDisplayed());
+        Assert.assertTrue(activityStreamPage.uploadedFiles.isDisplayed());
         Driver.getDriver().switchTo().defaultContent();
     }
 
@@ -89,7 +89,7 @@ public class US12_AprFileLoadStepDef {
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         activityStreamPage.messageBoxIframe.clear();
         activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\png.png");
-        Assert.assertTrue(activityStreamPage.uploadedPng.isDisplayed());
+        Assert.assertTrue(activityStreamPage.uploadedFiles.isDisplayed());
         Driver.getDriver().switchTo().defaultContent();
     }
 
@@ -98,7 +98,7 @@ public class US12_AprFileLoadStepDef {
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         activityStreamPage.messageBoxIframe.clear();
         activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\docx.docx");
-        Assert.assertTrue(activityStreamPage.uploadedDocx.isDisplayed());
+        Assert.assertTrue(activityStreamPage.uploadedFiles.isDisplayed());
         Driver.getDriver().switchTo().defaultContent();
     }
 
@@ -111,31 +111,71 @@ public class US12_AprFileLoadStepDef {
 
     @Then("uploaded pdf is not displayed before sending")
     public void uploadedPdfIsNotDisplayedBeforeSending() {
-        Assert.assertFalse(activityStreamPage.uploadedPdf.isDisplayed());
+        Assert.assertFalse(activityStreamPage.uploadedFiles.isDisplayed());
     }
 
     @Then("uploaded txt is not displayed before sending")
     public void uploadedTxtIsNotDisplayedBeforeSending() {
-        Assert.assertFalse(activityStreamPage.uploadedTxt.isDisplayed());
+        Assert.assertFalse(activityStreamPage.uploadedFiles.isDisplayed());
     }
 
     @Then("uploaded jpeg is not displayed before sending")
     public void uploadedJpegIsNotDisplayedBeforeSending() {
-        Assert.assertFalse(activityStreamPage.uploadedJpeg.isDisplayed());
+        Assert.assertFalse(activityStreamPage.uploadedFiles.isDisplayed());
     }
 
     @Then("uploaded png is not displayed before sending")
     public void uploadedPngIsNotDisplayedBeforeSending() {
-        Assert.assertFalse(activityStreamPage.uploadedPng.isDisplayed());
+        Assert.assertFalse(activityStreamPage.uploadedFiles.isDisplayed());
     }
 
     @Then("uploaded docx is not displayed before sending")
     public void uploadedDocxIsNotDisplayedBeforeSending() {
-        Assert.assertFalse(activityStreamPage.uploadedDocx.isDisplayed());
+        Assert.assertFalse(activityStreamPage.uploadedFiles.isDisplayed());
     }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*@Then("User can remove pdf at any time before sending")
+    public void userCanRemovePdfAtAnyTimeBeforeSending() {
+
+    }
+
+    @Then("User can remove txt at any time before sending")
+    public void userCanRemoveTxtAtAnyTimeBeforeSending() {
+
+    }
+
+    @Then("User can remove jpeg at any time before sending")
+    public void userCanRemoveJpegAtAnyTimeBeforeSending() {
+
+    }
+
+    @Then("User can remove png at any time before sending")
+    public void userCanRemovePngAtAnyTimeBeforeSending() {
+
+    }
+
+    @Then("User can remove docx at any time before sending")
+    public void userCanRemoveDocxAtAnyTimeBeforeSending() {
+    }
+
+     */
 }
 
 
