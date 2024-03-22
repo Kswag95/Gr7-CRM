@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 
 public abstract class BasePage {
 
@@ -19,6 +21,12 @@ public abstract class BasePage {
     @FindBy(className = "login-btn")
     public WebElement logInBtn;
 
+    @FindBy(id = "left-menu-more-btn")
+    public WebElement extendMenuMore;
+    @FindBy(className = "menu-item-link-text")
+    public List<WebElement> ActivityStreamMenu;
+    @FindBy(xpath = "//div[@class='main-buttons']//a")//main buttons menu top middle of most pages
+    public List <WebElement> mainButtonsMenu;
 
 
     public BasePage() {
