@@ -76,4 +76,8 @@ public class ActivityStreamPage {
 
     @FindBy(xpath = "//span[@class='feed-add-post-del-but']")
     public WebElement cancelButtonOfAllEmployee;
+
+    @FindBy(xpath = "//*[@id='bx_left_menu_menu_company']/a/span")
+    public WebElement employeesButton;
 }
+
