@@ -1,6 +1,7 @@
 package com.CRM.step_definitions;
 
 import com.CRM.pages.LoginPage;
+import com.CRM.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -8,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +36,7 @@ public class US13andUS14Defs
     public void userClickOnMenu(String menuChoice)
     {
         myPage.siteMapMenu.click(); // extends to see all options on menu
-
+        wait =new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfAllElements(myPage.siteMapContentList)); // waits for all menu options to load
 
         for (WebElement eachElement: myPage.siteMapContentList){
