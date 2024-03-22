@@ -136,46 +136,6 @@ public class US12_AprFileLoadStepDef {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*@Then("User can remove pdf at any time before sending")
-    public void userCanRemovePdfAtAnyTimeBeforeSending() {
-
-    }
-
-    @Then("User can remove txt at any time before sending")
-    public void userCanRemoveTxtAtAnyTimeBeforeSending() {
-
-    }
-
-    @Then("User can remove jpeg at any time before sending")
-    public void userCanRemoveJpegAtAnyTimeBeforeSending() {
-
-    }
-
-    @Then("User can remove png at any time before sending")
-    public void userCanRemovePngAtAnyTimeBeforeSending() {
-
-    }
-
-    @Then("User can remove docx at any time before sending")
-    public void userCanRemoveDocxAtAnyTimeBeforeSending() {
-    }
-
-     */
 }
 
 
