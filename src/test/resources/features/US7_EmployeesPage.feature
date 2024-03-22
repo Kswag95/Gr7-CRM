@@ -22,3 +22,8 @@ Feature: Employees page structure verification
     |New page           |
 
 
+  @US7-AC2
+
+Scenario: verify users see the Company Structure as default
+    When user click on the Employees button
+    Then user should see Company Structure as a default
