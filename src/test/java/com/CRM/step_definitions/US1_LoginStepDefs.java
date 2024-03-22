@@ -11,14 +11,9 @@ import io.cucumber.java.en.When;
 import org.checkerframework.checker.units.qual.A;
 import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class US1_LoginStepDefs
 {
-    WebDriverWait wait;
     LoginPage loginPage= new LoginPage();
     @Given("User type in application url into browser")
     public void userTypeInApplicationUrlIntoBrowser()
@@ -29,8 +24,6 @@ public class US1_LoginStepDefs
     @Then("User in on the {string}  page")
     public void userInOnTheLoginPage(String expectedTitle)
     {
-        wait =new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.titleContains(expectedTitle));
         //used contain to reduce code
         BrowserUtils.verifyTitleContains(expectedTitle);
     }

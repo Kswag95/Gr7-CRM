@@ -7,26 +7,26 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ActivityStreamPage extends BasePage{
 
-    public ActivityStreamPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public ActivityStreamPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
 
     @FindBy(id = "user-name")
     public WebElement profilePage;// added by LG
-    @FindBy (xpath = "//span[@id='feed-add-post-form-link-more']")
+    @FindBy(xpath = "//span[@id='feed-add-post-form-link-more']")
     public WebElement more;
 
-    @FindBy(xpath ="//span[text()='Appreciation']")
+    @FindBy(xpath = "//span[text()='Appreciation']")
     public WebElement appreciation;
 
-    @FindBy (xpath="//span[@id='bx-b-uploadfile-blogPostForm']")
+    @FindBy(xpath = "//span[@id='bx-b-uploadfile-blogPostForm']")
     public WebElement uploadFile;
 
     @FindBy(xpath = "//input[@name='bxu_files[]']")
     public WebElement uploadFileAndImages;
 
-    @FindBy(xpath="//span[contains(@id,'check-in-text')]")
+    @FindBy(xpath = "//span[contains(@id,'check-in-text')]")
     public WebElement insertInText;
 
     @FindBy(xpath = "//td[@class='files-del-btn']")
@@ -77,7 +77,10 @@ public class ActivityStreamPage extends BasePage{
     @FindBy(xpath = "//span[@class='feed-add-post-del-but']")
     public WebElement cancelButtonOfAllEmployee;
 
-    @FindBy(xpath = "//*[@id='bx_left_menu_menu_company']/a/span")
-    public WebElement employeesButton;
+    @FindBy(xpath = "//*[contains(@id,'bxid')]")
+    public WebElement uploadedFiles;
+    @FindBy(xpath="//td[@class='files-storage']")
+    public WebElement myDriveUploaded;
 }
+
 
