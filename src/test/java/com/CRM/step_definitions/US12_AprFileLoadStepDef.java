@@ -1,6 +1,7 @@
 package com.CRM.step_definitions;
 
 import com.CRM.pages.ActivityStreamPage;
+import com.CRM.utilities.BrowserUtils;
 import com.CRM.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -60,15 +61,18 @@ public class US12_AprFileLoadStepDef {
     @Then("User can insert the pdf into the text")
     public void userCanInsertThePdfIntoTheText() {
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+        BrowserUtils.sleep(5);
         activityStreamPage.messageBoxIframe.clear();
         activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\pdf.lnk");
-       Assert.assertTrue(activityStreamPage.uploadedFiles.isDisplayed());
+        BrowserUtils.sleep(5);
+        Assert.assertTrue(activityStreamPage.uploadedFiles.isDisplayed());
         Driver.getDriver().switchTo().defaultContent();
     }
 
     @Then("User can insert the txt into the text")
     public void userCanInsertTheTxtIntoTheText() {
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+
         activityStreamPage.messageBoxIframe.clear();
         activityStreamPage.messageBoxIframe.sendKeys("C:\\Users\\safav\\OneDrive\\Desktop\\txt.lnk");
         Assert.assertTrue(activityStreamPage.uploadedFiles.isDisplayed());
@@ -111,27 +115,38 @@ public class US12_AprFileLoadStepDef {
 
     @Then("uploaded pdf is not displayed before sending")
     public void uploadedPdfIsNotDisplayedBeforeSending() {
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         Assert.assertFalse(activityStreamPage.uploadedFiles.isDisplayed());
+        Driver.getDriver().switchTo().defaultContent();
+
     }
 
     @Then("uploaded txt is not displayed before sending")
     public void uploadedTxtIsNotDisplayedBeforeSending() {
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         Assert.assertFalse(activityStreamPage.uploadedFiles.isDisplayed());
+        Driver.getDriver().switchTo().defaultContent();
     }
 
     @Then("uploaded jpeg is not displayed before sending")
     public void uploadedJpegIsNotDisplayedBeforeSending() {
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         Assert.assertFalse(activityStreamPage.uploadedFiles.isDisplayed());
+        Driver.getDriver().switchTo().defaultContent();
     }
 
     @Then("uploaded png is not displayed before sending")
     public void uploadedPngIsNotDisplayedBeforeSending() {
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         Assert.assertFalse(activityStreamPage.uploadedFiles.isDisplayed());
+        Driver.getDriver().switchTo().defaultContent();
     }
 
     @Then("uploaded docx is not displayed before sending")
     public void uploadedDocxIsNotDisplayedBeforeSending() {
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
         Assert.assertFalse(activityStreamPage.uploadedFiles.isDisplayed());
+        Driver.getDriver().switchTo().defaultContent();
     }
 
 

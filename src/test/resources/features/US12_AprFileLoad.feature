@@ -32,7 +32,7 @@ Background: User is on the Activity Stream page
 		And User clicks on Upload file to Upload docx
 		Then uploaded files is displayed
 
-	@AC2l
+	@AC2la
 	Scenario: Verify that the user can insert pdf into the text
 		And User clicks on Upload file to upload pdf
 		And uploaded files is displayed
@@ -63,7 +63,6 @@ Background: User is on the Activity Stream page
 		And uploaded files is displayed
 		And User clicks on Insert in text
 		Then User can insert the docx into the text
-
 
 
 	@AC3l
