@@ -1,3 +1,4 @@
+@US13
 Feature: Driver page functionality
   Agile story: As a user, I should be able to access the Drive page.
 
@@ -11,7 +12,7 @@ Feature: Driver page functionality
     When User types "<password>" in password input box
     And User click on login button
     And user should click Activity Stream
-    And user click on "Drive" menu
+    And user should click "Drive"
     And User in on the "My Drive"  page
     Then User should see modules
       | My Drive                   |
