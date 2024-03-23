@@ -83,10 +83,10 @@ public class ActivityStreamPage extends BasePage {
     public WebElement cancelButtonOfAllEmployee;
 
     @FindBy(xpath = "//*[contains(@id,'bxid')]")
-    public WebElement uploadedFiles;
+    public WebElement insertedFile;
 
     @FindBy(xpath = "//tr[contains(@id,'disk-edit-attachn')]/td[1]/span/span[1]")
-    public WebElement insertedFile;
+    public WebElement uploadedFile;
     @FindBy(xpath = "//td[@class='files-storage']")
     public WebElement myDriveUploaded;
     @FindBy(xpath = "//td[@class='files-name']")

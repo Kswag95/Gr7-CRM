@@ -36,7 +36,7 @@ public class US12_AprFileLoadStepDef {
     @Then("user should be able to see {string} in the uploaded files")
     public void user_should_be_able_to_see_in_the_uploaded_files(String fileName) {
         BrowserUtils.waitFor(3);
-        String uploadedFileText = activityStreamPage.insertedFile.getText();
+        String uploadedFileText = activityStreamPage.uploadedFile.getText();
         System.out.println("uploadedFileText = " + uploadedFileText);
         Assert.assertTrue(uploadedFileText.contains(fileName.substring(0, fileName.indexOf("."))));
     }
@@ -64,7 +64,7 @@ public class US12_AprFileLoadStepDef {
     @Then("user should not be able to see {string} in the uploaded files")
     public void userShouldNotBeAbleToSeeInTheUploadedFiles(String fileName) {
         BrowserUtils.waitFor(3);
-        String uploadedFileText = activityStreamPage.insertedFile.getText();
+        String uploadedFileText = activityStreamPage.uploadedFile.getText();
         System.out.println("uploadedFileText = " + uploadedFileText);
         Assert.assertTrue(uploadedFileText.contains(fileName.substring(0,fileName.indexOf("."))));
     }
