@@ -12,6 +12,21 @@ public class EmployeesPage {
         PageFactory.initElements(Driver.getDriver(), this);}
 
     @FindBy(css = ".main-buttons-item-text-title" )
-    public List<WebElement>allModules;}
+    public List<WebElement>allModules;
+
+    @FindBy (xpath = "//a[@title='Employees']")
+    public WebElement employeesModule;
+
+    @FindBy (xpath = "//span[@class='webform-small-button-text']")
+    public WebElement addDepartmentButton;
+
+    @FindBy (xpath = "//html[@class='bx-core bx-no-touch bx-no-retina bx-chrome']")
+    public WebElement entireHtml;
+
+
+
+
+
+}
 
 
