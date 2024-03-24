@@ -54,7 +54,10 @@ public class BrowserUtils {
         Assert.assertEquals(Driver.getDriver().getTitle(), expectedTitle);
     }
     public static void verifyTitleContains( String expectedInTitle){
-        Assert.assertTrue(Driver.getDriver().getTitle().contains(expectedInTitle));
+        Assert.assertTrue(
+                "Actual title \""+Driver.getDriver().getTitle()+"\" doesn't contain "+expectedInTitle,
+                Driver.getDriver().getTitle().contains(expectedInTitle)
+        );
     }
 
     /*
@@ -379,7 +382,7 @@ public class BrowserUtils {
     }
 
     /**
-     * Highlighs an element by changing its background and border color
+     * Highlights an element by changing its background and border color
      * @param element
      */
     public static void highlight(WebElement element) {
