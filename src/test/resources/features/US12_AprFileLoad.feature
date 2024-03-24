@@ -8,12 +8,13 @@ Background: User is on the Activity Stream page
 	When User clicks on MORE tab
 	And User clicks on Appreciation
 	And User clicks on Upload files
-	And user upload the files "<fileType>"
+
 	@Leila1
-	Scenario Outline: Verify that the user can upload <fileType>
-	Then user should be able to see "<fileType>" in the uploaded files
+	Scenario Outline: Verify that the user can upload <fileName >
+		And user upload the files "<fileName>"
+	Then user should be able to see "<fileName>" in the uploaded files
 		Examples:
-			| fileType      |
+			| fileName       |
 			| TestDocx.docx |
             | TestJpeg.jpg  |
             | TestPdf.pdf   |
@@ -21,11 +22,12 @@ Background: User is on the Activity Stream page
             | TestTxt.txt   |
 
 	@Leila2
-	Scenario Outline: Verify that the <userType> can insert the <fileType>into the text.
+	Scenario Outline: Verify that the user can insert the <fileName>into the text.
+		And user upload the files "<fileName>"
 		And User clicks on Insert in text
-		Then user should be able to see "<fileType>" in the message
+		Then user should be able to see "<fileName>" in the message
 		Examples:
-			| fileType      |
+			| fileName      |
 			| TestDocx.docx |
 			| TestJpeg.jpg  |
 			| TestPdf.pdf   |
@@ -34,11 +36,12 @@ Background: User is on the Activity Stream page
 
 
 	@Leila3
-	Scenario Outline: Verify that the <userType> can remove <fileType> at any time before sending.
+	Scenario Outline: Verify that the user can remove <fileName> at any time before sending.
+		And user upload the files "<fileName>"
 		And User clicks on X button
-		Then user should not be able to see "<fileType>" in the uploaded files
+		Then user should not be able to see "<fileName>" in the uploaded files
 		Examples:
-			| fileType      |
+			| fileName       |
 			| TestDocx.docx |
 			| TestJpeg.jpg  |
 			| TestPdf.pdf   |
