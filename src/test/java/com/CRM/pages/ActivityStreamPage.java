@@ -83,23 +83,22 @@ public class ActivityStreamPage extends BasePage {
     public WebElement cancelButtonOfAllEmployee;
 
     @FindBy(xpath = "//*[contains(@id,'bxid')]")
-    public WebElement insertedFile;
+    public WebElement insertedFiles;
 
     @FindBy(xpath = "//tr[contains(@id,'disk-edit-attachn')]/td[1]/span/span[1]")
     public WebElement uploadedFile;
     @FindBy(xpath = "//td[@class='files-storage']")
     public WebElement myDriveUploaded;
-    @FindBy(xpath = "//td[@class='files-name']")
-    public WebElement insertedFiles;
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement msgBoxFrame;
     public void uploadFile(String fileName) {
+
         String fileSeparator = System.getProperty("file.separator");
         String path = System.getProperty("user.dir") + fileSeparator + "src/test/resources/files" + fileSeparator + fileName;
          uploadFileAndImages.sendKeys(path);
     }
     public void switchToFrame(){
-        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+        Driver.getDriver().switchTo().frame(msgBoxFrame);
     }
     public void switchToDefaultContent(){
         Driver.getDriver().switchTo().defaultContent();
@@ -108,7 +107,7 @@ public class ActivityStreamPage extends BasePage {
     public String getPictureSrcFromMessage() {
         switchToFrame();
         BrowserUtils.waitFor(5);
-        String source=insertedFile.getAttribute("src");
+        String source=insertedFiles.getAttribute("src");
         switchToDefaultContent();
         return source;
     }
@@ -118,4 +117,5 @@ public class ActivityStreamPage extends BasePage {
         switchToDefaultContent();
         return message;
     }
+
 }
