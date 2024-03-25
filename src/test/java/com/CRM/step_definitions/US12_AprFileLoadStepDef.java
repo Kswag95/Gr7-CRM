@@ -54,7 +54,7 @@ public class US12_AprFileLoadStepDef {
     @Then("user should be able to see {string} in the message")
        public void userShouldBeAbleToSeeInTheMessage(String fileName) {
 
-        if (fileName.contains("png") || fileName.contains("jpg")||fileName.contains("txt")||fileName.contains("pdf")||fileName.contains("docx")){
+        if (fileName.contains("png") || fileName.contains("jpg")){
             String actualSource = activityStreamPage.getPictureSrcFromMessage();
             Assert.assertTrue(actualSource.contains(fileName.substring(0,fileName.indexOf("."))));
         }else {
@@ -65,11 +65,16 @@ public class US12_AprFileLoadStepDef {
 
     @And("User clicks on X button")
     public void userClicksOnXButton() {
+        //BrowserUtils.sleep(1);
+
         activityStreamPage.X.click();
+
+
     }
     @Then("user should not be able to see {string} in the uploaded files")
     public void userShouldNotBeAbleToSeeInTheUploadedFiles(String ignoredWord) {
-       BrowserUtils.waitFor(3);
-       Assert.assertTrue(activityStreamPage.uploadedFile.getText()==null);
+        //BrowserUtils.waitFor(1);
+
+        Assert.assertTrue(activityStreamPage.uploadedFileList.size()==0);
     }
 }
