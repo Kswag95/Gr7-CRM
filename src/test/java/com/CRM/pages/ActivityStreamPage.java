@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class ActivityStreamPage extends BasePage {
 
     public ActivityStreamPage() {
@@ -33,7 +35,7 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//span[contains(@id,'check-in-text')]")
     public WebElement insertInText;
 
-    @FindBy(xpath = "//td[@class='files-del-btn']")
+    @FindBy(xpath = "//span[@class='del-but']")
     public WebElement X;
 
     @FindBy(xpath = "//span[.='My Profile']")
@@ -87,10 +89,16 @@ public class ActivityStreamPage extends BasePage {
 
     @FindBy(xpath = "//tr[contains(@id,'disk-edit-attachn')]/td[1]/span/span[1]")
     public WebElement uploadedFile;
+
     @FindBy(xpath = "//td[@class='files-storage']")
     public WebElement myDriveUploaded;
+
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement msgBoxFrame;
+
+    @FindBy(xpath = "//tr[contains(@id,'disk-edit-attachn')]")
+    public List<WebElement> uploadedFileList;
+
     public void uploadFile(String fileName) {
 
         String fileSeparator = System.getProperty("file.separator");
