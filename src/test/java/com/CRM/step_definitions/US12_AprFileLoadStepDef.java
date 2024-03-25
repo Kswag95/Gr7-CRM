@@ -10,6 +10,10 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class US12_AprFileLoadStepDef {
 
     ActivityStreamPage activityStreamPage = new ActivityStreamPage();
@@ -37,19 +41,18 @@ public class US12_AprFileLoadStepDef {
     @Then("user should be able to see {string} in the uploaded files")
     public void user_should_be_able_to_see_in_the_uploaded_files(String fileName) {
 
+
         BrowserUtils.waitFor(3);
         String uploadedFileText = activityStreamPage.uploadedFile.getText();
         System.out.println("uploadedFileText = " + uploadedFileText);
         Assert.assertTrue(uploadedFileText.contains(fileName.substring(0, fileName.indexOf("."))));
     }
-        @And("User clicks on Insert in text")
+    @And("User clicks on Insert in text")
         public void userClicksOnInsertInText() {
             activityStreamPage.insertInText.click();
         }
-
-    
     @Then("user should be able to see {string} in the message")
-    public void userShouldBeAbleToSeeInTheMessage(String fileName) {
+       public void userShouldBeAbleToSeeInTheMessage(String fileName) {
 
         if (fileName.contains("png") || fileName.contains("jpg")||fileName.contains("txt")||fileName.contains("pdf")||fileName.contains("docx")){
             String actualSource = activityStreamPage.getPictureSrcFromMessage();
@@ -65,10 +68,8 @@ public class US12_AprFileLoadStepDef {
         activityStreamPage.X.click();
     }
     @Then("user should not be able to see {string} in the uploaded files")
-    public void userShouldNotBeAbleToSeeInTheUploadedFiles(String fileName) {
-        BrowserUtils.waitFor(3);
-        String uploadedFileText = activityStreamPage.uploadedFile.getText();
-        System.out.println("uploadedFileText = " + uploadedFileText);
-        Assert.assertTrue(uploadedFileText.contains(fileName.substring(0,fileName.indexOf("."))));
+    public void userShouldNotBeAbleToSeeInTheUploadedFiles(String ignoredWord) {
+       BrowserUtils.waitFor(3);
+       Assert.assertTrue(activityStreamPage.uploadedFile.getText()==null);
     }
 }
