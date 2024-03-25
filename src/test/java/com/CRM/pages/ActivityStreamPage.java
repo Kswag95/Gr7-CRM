@@ -42,7 +42,7 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//li[@data-id='menu_live_feed']")
     public WebElement activityStream;
 
-    @FindBy(xpath = "//div[@id='microoPostFormLHE_blogPostForm']")
+    @FindBy(xpath = "//body[@contenteditable='true']")
     public WebElement messageBox;
 
 
@@ -113,6 +113,7 @@ public class ActivityStreamPage extends BasePage {
     }
     public String getMessageContent() {
         switchToFrame();
+        BrowserUtils.waitFor(5);
         String message=messageBox.getText();
         switchToDefaultContent();
         return message;
