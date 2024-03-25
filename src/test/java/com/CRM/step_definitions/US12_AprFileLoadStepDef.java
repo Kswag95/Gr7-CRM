@@ -54,7 +54,7 @@ public class US12_AprFileLoadStepDef {
     @Then("user should be able to see {string} in the message")
        public void userShouldBeAbleToSeeInTheMessage(String fileName) {
 
-        if (fileName.contains("png") || fileName.contains("jpg")||fileName.contains("txt")||fileName.contains("pdf")||fileName.contains("docx")){
+        if (fileName.contains("png") || fileName.contains("jpg")){
             String actualSource = activityStreamPage.getPictureSrcFromMessage();
             Assert.assertTrue(actualSource.contains(fileName.substring(0,fileName.indexOf("."))));
         }else {
