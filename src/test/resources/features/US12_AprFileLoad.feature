@@ -12,7 +12,7 @@ Background: User is on the Activity Stream page
 	@Leila1
 	Scenario Outline: Verify that the user can upload <fileName >
 		And user upload the files "<fileName>"
-	Then user should be able to see "<fileName>" in the uploaded files
+	    Then user should be able to see "<fileName>" in the uploaded files
 		Examples:
 			| fileName       |
 			| TestDocx.docx |
