@@ -65,11 +65,16 @@ public class US12_AprFileLoadStepDef {
 
     @And("User clicks on X button")
     public void userClicksOnXButton() {
+        //BrowserUtils.sleep(1);
+
         activityStreamPage.X.click();
+
+
     }
     @Then("user should not be able to see {string} in the uploaded files")
     public void userShouldNotBeAbleToSeeInTheUploadedFiles(String ignoredWord) {
-       BrowserUtils.waitFor(3);
-       Assert.assertTrue(activityStreamPage.uploadedFile.getText()==null);
+        //BrowserUtils.waitFor(1);
+
+        Assert.assertTrue(activityStreamPage.uploadedFileList.size()==0);
     }
 }
