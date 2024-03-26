@@ -99,6 +99,28 @@ public class ActivityStreamPage extends BasePage {
     @FindBy(xpath = "//tr[contains(@id,'disk-edit-attachn')]")
     public List<WebElement> uploadedFileList;
 
+    @FindBy(xpath = "//span[text()='Message']")
+    public WebElement messageOption;
+
+    @FindBy(xpath = "//span[text()='Task']")
+    public WebElement taskOption;
+
+    @FindBy(xpath = "//span[text()='Event']")
+    public WebElement eventOption;
+
+    @FindBy(xpath = "//span[text()='Poll']")
+    public WebElement pollOption;
+
+    @FindBy(xpath = "//span[text()='File']")
+    public WebElement fileOption;
+
+    @FindBy(xpath = "//span[text()='Announcement']")
+    public WebElement announcementOption;
+
+    @FindBy(xpath = "//span[text()='Workflow']")
+    public WebElement workflowOption;
+
+
     public void uploadFile(String fileName) {
 
         String fileSeparator = System.getProperty("file.separator");
@@ -126,5 +148,7 @@ public class ActivityStreamPage extends BasePage {
         switchToDefaultContent();
         return message;
     }
+
+
 
 }
